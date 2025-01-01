@@ -1,4 +1,7 @@
 
+import java.util.Collection;
+
+
 // abstract class Computer {
 //     abstract public void hibernate();
 //     abstract public void program();
@@ -296,38 +299,119 @@
 //     }
 // }
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
-class Calculator {
-    final private int num1;
-     private int num2;
+// class Calculator {
+//     final private int num1;
+//      private int num2;
 
-    public Calculator(int num1, int num2) {
-        this.num1 = num1;
-        this.num2 = num2;
-    }
+//     public Calculator(int num1, int num2) {
+//         this.num1 = num1;
+//         this.num2 = num2;
+//     }
 
-    public int getNumbers() {
-        try {
-            if(num2 % 2!=0){
-                num2 = 1;
-            }
-            return num1 / num2;
-        } catch (ArithmeticException e) {
-            System.out.println("Cannot Divide by zero" + e);
-            return 0;
+//     public int getNumbers() {
+//         try {
+//             if(num2 % 2!=0){
+//                 num2 = 1;
+//             }
+//             return num1 / num2;
+//         } catch (ArithmeticException e) {
+//             System.out.println("Cannot Divide by zero" + e);
+//             return 0;
+//         }
+//     }
+
+// }
+
+// public class Demo {
+//     public static void main(String[] args) {
+
+//         Scanner scanner = new Scanner(System.in);
+//         System.out.println("Please enter a number to be divide");
+//         int num2 = scanner.nextInt();
+//         Calculator c = new Calculator(3,num2);
+//         System.out.println(c.getNumbers());
+//     }
+// }
+
+//Docking Exception in Java//
+
+import java.util.Collection;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+ public class Demo{
+    public static void main(String[] args){
+        // Collection 
+        Collection<Integer> nums = new ArrayList<>();
+
+        // List 
+        List<Integer>numbers = new ArrayList<>();
+
+        // Set Interface implements HashSet// 
+        Set <Integer> studentAges = new HashSet<>();
+
+        //Set Interface implements TreeSet// 
+        Set <Integer> studentPosition = new TreeSet<>();
+
+        studentPosition.add(3);
+        studentPosition.add(7);
+        studentPosition.add(8);
+
+        System.out.println(studentPosition);
+
+        Iterator<Integer>iterators = studentPosition.iterator();
+
+        while(iterators.hasNext())
+            System.out.println("Student Position " + iterators.next());
+
+        studentAges.add(25);
+        studentAges.add(26);
+        studentAges.add(34);
+        studentAges.add(54);
+
+        System.out.println(studentAges);
+
+
+        nums.add(4);
+        nums.add(5);
+        nums.add(6);
+
+        numbers.add(5);
+        numbers.add(6);
+        numbers.add(7);
+        numbers.add(8);
+
+      System.out.println(numbers.get(2));
+      System.out.println(numbers.size());
+
+      for(int i =0; i < numbers.size(); i++){
+        System.out.println(numbers.get(i));
+      }
+
+        System.out.println(nums);
+
+        // Mapping in java 
+
+        Map<String,Integer> students = new HashMap<>();
+
+        students.put("Abdullahi", 67);
+        students.put("Abdulbasit", 78 );
+        students.put("AbdulSamad", 80);
+        students.put("Ahmad", 45 );
+
+        System.out.println(students.keySet());
+
+        for(String key: students.keySet())
+        {
+            System.out.println(key + " : " + students.get(key)); 
         }
-    }
 
-}
-
-public class Demo {
-    public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter a number to be divide");
-        int num2 = scanner.nextInt();
-        Calculator c = new Calculator(3,num2);
-        System.out.println(c.getNumbers());
     }
 }
